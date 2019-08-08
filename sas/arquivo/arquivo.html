@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trabalhando com Arquivos | LOM</title>
+    <meta name="description" content="Leia o Manual ツ">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.3e641832.css" as="style"><link rel="preload" href="/assets/js/app.d1c8e9c0.js" as="script"><link rel="preload" href="/assets/js/2.0e6a94b5.js" as="script"><link rel="preload" href="/assets/js/20.08a54e29.js" as="script"><link rel="prefetch" href="/assets/js/10.28bcd1c3.js"><link rel="prefetch" href="/assets/js/11.1c52a826.js"><link rel="prefetch" href="/assets/js/12.13dd6d6e.js"><link rel="prefetch" href="/assets/js/13.b87bafd2.js"><link rel="prefetch" href="/assets/js/14.6de4f2c7.js"><link rel="prefetch" href="/assets/js/15.10947295.js"><link rel="prefetch" href="/assets/js/16.46c5e574.js"><link rel="prefetch" href="/assets/js/17.bc4fcd81.js"><link rel="prefetch" href="/assets/js/18.db3c44f1.js"><link rel="prefetch" href="/assets/js/19.912503e7.js"><link rel="prefetch" href="/assets/js/21.bf458488.js"><link rel="prefetch" href="/assets/js/3.0df48458.js"><link rel="prefetch" href="/assets/js/4.080804c5.js"><link rel="prefetch" href="/assets/js/5.34bbdf19.js"><link rel="prefetch" href="/assets/js/6.6bd5f640.js"><link rel="prefetch" href="/assets/js/7.630609b7.js"><link rel="prefetch" href="/assets/js/8.ff9e06da.js"><link rel="prefetch" href="/assets/js/9.bdfb067e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.3e641832.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">LOM</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">[Inicio]</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">[R]</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/r/ead/" class="nav-link">Explorando dados</a></li><li class="dropdown-item"><!----> <a href="/r/tidyverse/" class="nav-link">TidyVerse</a></li></ul></div></div><div class="nav-item"><a href="/sas/" class="nav-link router-link-active">[SAS]</a></div><div class="nav-item"><a href="/sandbox.html" class="nav-link">(ツ)</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">[Inicio]</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">[R]</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/r/ead/" class="nav-link">Explorando dados</a></li><li class="dropdown-item"><!----> <a href="/r/tidyverse/" class="nav-link">TidyVerse</a></li></ul></div></div><div class="nav-item"><a href="/sas/" class="nav-link router-link-active">[SAS]</a></div><div class="nav-item"><a href="/sandbox.html" class="nav-link">(ツ)</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/sas/" class="sidebar-link">Liguagem SAS</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>O básico da linguagem</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sas/arquivo/arquivo.html" class="active sidebar-link">Trabalhando com Arquivos</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="trabalhando-com-arquivos"><a href="#trabalhando-com-arquivos" aria-hidden="true" class="header-anchor">#</a> Trabalhando com Arquivos</h1> <p>Alterando o programa</p> <p>Aprenderemos com trabalhr com arquivos:</p> <ul><li>Texto simples (flat files);</li> <li>Arquivos separados por vírgula ou ponto-vírgula (csv files); e</li> <li>planilhas (cls, clsx files).</li></ul> <div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> 
+DATA A<span class="token punctuation">;</span> 
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span> 
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span> 
+DATALINES<span class="token punctuation">;</span> 
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span> 
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> 
+DATA A<span class="token punctuation">;</span> 
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span> 
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span> 
+DATALINES<span class="token punctuation">;</span> 
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span> 
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA A<span class="token punctuation">;</span>
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span>
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span>
+IF LOCAL <span class="token operator">=</span>‘RCLARO’ THEN DELETE<span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA A<span class="token punctuation">;</span>
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span>
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span>
+IF IDADE<span class="token operator">=</span><span class="token number">7</span> THEN DELETE<span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA A<span class="token punctuation">;</span>
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span>
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span>
+IF IDADE<span class="token operator">=</span><span class="token number">7</span> AND LOCAL<span class="token operator">=</span>‘BAURÚ’ THEN DELETE<span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> LS<span class="token operator">=</span><span class="token number">72</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA A<span class="token punctuation">;</span>
+LENGTH LOCAL ESPECIE $<span class="token number">12.</span><span class="token punctuation">;</span>
+INPUT LOCAL $ ESPECIE $ VOLUME  IDADE<span class="token punctuation">;</span>
+IF LOCAL<span class="token operator">=</span>‘LENÇOIS’ OR LOCAL<span class="token operator">=</span>‘BAURÚ’  THEN DELETE<span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+RCLARO   E<span class="token punctuation">.</span>GRANDIS      <span class="token number">123</span>   <span class="token number">5</span> 
+RCLARO   E<span class="token punctuation">.</span>SALIGNA       <span class="token number">211</span>   <span class="token number">8</span> 
+PIRACICABA   P<span class="token punctuation">.</span>TAEDA    <span class="token number">201</span> <span class="token number">15</span> 
+PIRACICABA   P<span class="token punctuation">.</span>ELLIOTTII   <span class="token number">98</span>   <span class="token number">8</span> 
+BAURÚ    E<span class="token punctuation">.</span>GRANDIS   <span class="token number">321</span>   <span class="token number">7</span>  
+LENÇOIS   E<span class="token punctuation">.</span>UROPHYLLA   <span class="token number">303</span>   <span class="token number">7</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">;</span> 
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA SOBREV<span class="token punctuation">;</span>
+INPUT ESP $ IDADE VIVOS <span class="token punctuation">;</span>
+TAXAMORT<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token operator">-</span>VIVOS<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+A01   <span class="token number">0</span>   <span class="token number">25</span> 
+A01   <span class="token number">1</span>   <span class="token number">25</span>  
+A01   <span class="token number">2</span>   <span class="token number">21</span> 
+A01   <span class="token number">3</span>   <span class="token number">18</span> 
+A01   <span class="token number">4</span>   <span class="token number">11</span> 
+A01   <span class="token number">5</span>    <span class="token number">7</span> 
+A01   <span class="token number">6</span>    <span class="token number">3</span> 
+A02   <span class="token number">0</span>   <span class="token number">25</span>  
+A02   <span class="token number">1</span>   <span class="token number">25</span>  
+A02   <span class="token number">2</span>   <span class="token number">25</span> 
+A02   <span class="token number">3</span>   <span class="token number">14</span> 
+A02   <span class="token number">4</span>    <span class="token number">6</span> 
+A02   <span class="token number">5</span>    <span class="token number">1</span> 
+A02   <span class="token number">6</span>    <span class="token number">0</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+PROC PRINT DATA<span class="token operator">=</span>A<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div><div class="language-c extra-class"><pre class="language-c"><code>OPTIONS PS<span class="token operator">=</span><span class="token number">54</span> PAGENO<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+DATA SOBREV<span class="token punctuation">;</span>
+INPUT ESP $ IDADE VIVOS <span class="token punctuation">;</span>
+TAXAMORT<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token operator">-</span>VIVOS<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">;</span>
+DATALINES<span class="token punctuation">;</span>
+A01   <span class="token number">0</span>   <span class="token number">25</span> 
+A01   <span class="token number">1</span>   <span class="token number">25</span>  
+A01   <span class="token number">2</span>   <span class="token number">21</span> 
+A01   <span class="token number">3</span>   <span class="token number">18</span> 
+A01   <span class="token number">4</span>   <span class="token number">11</span> 
+A01   <span class="token number">5</span>    <span class="token number">7</span> 
+A01   <span class="token number">6</span>    <span class="token number">3</span> 
+A02   <span class="token number">0</span>   <span class="token number">25</span>  
+A02   <span class="token number">1</span>   <span class="token number">25</span>  
+A02   <span class="token number">2</span>   <span class="token number">25</span> 
+A02   <span class="token number">3</span>   <span class="token number">14</span> 
+A02   <span class="token number">4</span>    <span class="token number">6</span> 
+A02   <span class="token number">5</span>    <span class="token number">1</span> 
+A02   <span class="token number">6</span>    <span class="token number">0</span> 
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+PROC PRINT DATA<span class="token operator">=</span>SOBREV<span class="token punctuation">;</span>
+RUN<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/sas/" class="prev router-link-active">
+          Liguagem SAS
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d1c8e9c0.js" defer></script><script src="/assets/js/2.0e6a94b5.js" defer></script><script src="/assets/js/20.08a54e29.js" defer></script>
+  </body>
+</html>
