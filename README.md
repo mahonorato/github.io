@@ -1,6 +1,8 @@
 ## mahonorato.github.io
 
-Este repositório é uma base de conhecimento onde registro dicas, scripts, tutoriais, fragementos de códigos e mini-tutoriais que utilizo em minhas atividades. Praticamente todo o material presente neste site estava armazenado em [mapas mentais](/freeplane.md) criados desde meados dos anos 2000 com os excelentes [Free Mind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) e [Freeplane](https://www.freeplane.org/wiki/index.php/Home). 
+Este repositório é uma base de conhecimento onde registro dicas, scripts, tutoriais, fragementos de códigos e mini-tutoriais que utilizo em minhas atividades. As informações estão publicadas em [Leia o Manual](http://leiaomanual.com.br/), graças ao [Vuepress](https://vuepress.vuejs.org/) e gentilmente hospedado, aqui mesmo, no [Github Pages](https://pages.github.com/).
+
+Praticamente todo o material presente neste site estava armazenado em [mapas mentais](/freeplane.md) criados desde meados dos anos 2000 com os excelentes [Free Mind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) e [Freeplane](https://www.freeplane.org/wiki/index.php/Home). 
 
 Quase todo o conteúdo disponível foi coletado na Internet, em livros, artigos e até em bate-papos com colegas da área. Sempre que possível, as fontes de informação estão referenciadas. 
 
